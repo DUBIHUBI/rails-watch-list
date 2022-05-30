@@ -1,12 +1,21 @@
 
 <div class="container">
     <h1 class="my-4 text-center">Watch List</h1>
-    <div class="grid-container m-4">
-        <% @lists.each do |list| %>
-          <div class="card-category" style="background-image: url('https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg');">
-            <%= link_to list.name, list_path(list) %>
-          </div>
-        <% end %>
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="grid-container m-4">
+            <% @lists.each do |list| %>
+            <%# <% list.first.poster_url %>
+              <div class="card-category" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg');">
+                <%= link_to list.name, list_path(list) %>
+              </div>
+            <% end %>
+        </div>
+      </div>
     </div>
-    <%= link_to "Create a new list", new_list_path, class: "btn btn-primary" %>
+    <div class="row justify-content-center">
+      <div class="col-8 col-lg-4 text-center">
+        <%= link_to "Create a new list", new_list_path, class: "btn btn-primary" %>
+      </div>
+    </div>
 </div>

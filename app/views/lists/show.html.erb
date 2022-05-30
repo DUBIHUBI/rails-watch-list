@@ -1,3 +1,4 @@
+<div class="container">
 <h1><%= @list.name %></h1>
 <ul>
 <% @list.bookmarks.each do |bookmark| %>
@@ -6,3 +7,6 @@
 </ul>
 
 <%= link_to "Add a Movie", new_list_bookmark_path(@list) %>
+<%= link_to "Back", lists_path, class: "btn btn-primary" %>
+
+</div>
