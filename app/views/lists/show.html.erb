@@ -11,7 +11,8 @@
             <h4 class="card-title"><%= movie.title %></h4>
             <div class="card-text">
               <p><%= movie.overview %></p>
-              <p>rating: <%= movie.rating %></p>
+            <% rounded = movie.rating.round %>
+              <p>rating: <%= movie.rating %>/10 <%= "★" * rounded %><%= "☆" * (10 - rounded) %></p>
             </div>
           </div>
         </div>
