@@ -4,9 +4,10 @@
     <div class="row justify-content-center">
       <div class="col-12 col-lg-8">
         <div class="grid-container m-4">
+          <% poster = "https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg" %>
             <% @lists.each do |list| %>
-            <%# <% list.first.poster_url %>
-              <div class="card-category" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg');">
+              <% poster = list.movies.sample.poster_url unless list.movies.empty? %>
+              <div class="card-category" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<%= poster %>');">
                 <%= link_to list.name, list_path(list) %>
               </div>
             <% end %>
